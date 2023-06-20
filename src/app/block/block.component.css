@@ -1,0 +1,11 @@
+.card2{
+    margin-top: 20px;       
+    width: 30%;
+    max-width: 30%;
+    max-height: 20%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-left: 5px solid blue;
+    background-color: wheat;
+    text-align: center;
+    padding: 10px;
+    }

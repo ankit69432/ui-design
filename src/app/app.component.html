@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>UIDesign</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="left">
+      <div class="card1">
+        <p><b>Bot is triggered if...</b></p>
+        <i class="fa fa-robot"></i>
+     </div>
+      <!-- <div class="card2">
+        <p><b>Collect Input 1</b></p>
+        <p style="color: rgb(74, 72, 72); font-size: smaller;"><b>What is your...</b></p>
+      </div> -->
+      <app-block></app-block>
+      <ngx-graph
+  class="chart-container"
+  [view]="[800, 800]"
+  [showMiniMap]="true"
+  [links]="[
+    {
+      id: 'a',
+      source: 'first',
+    target: 'second',
+      label: 'is parent of'
+    }, {
+      id: 'b',
+      source: 'first',
+      target: 'third',
+      label: 'custom label'
+    }
+  ]"
+  [nodes]="[
+    {
+      id: 'first',
+      label: 'A',
+      data: { backgroundColor: 'yellow', textColor: 'black' }
+    }, {
+      id: 'second',
+      label: 'B',
+      data: { backgroundColor: 'yellow', textColor: 'black' }
+    }, {
+      id: 'third',
+      label: 'C',
+      data: { backgroundColor: 'yellow', textColor: 'black' }
+    }
+  ]"
+>
+
+
+<ng-template #nodeTemplate let-node>
+  <svg:g >
+    <svg:rect class="card2"
+      [attr.width]="node.dimension.width + 20"
+      [attr.height]="node.dimension.height + 20"
+      [attr.fill]="node.data.backgroundColor"
+      [attr.rx]="4"
+      [attr.ry]="4"
+    ></svg:rect>
+    <svg:text
+      alignment-baseline="middle"
+      [attr.x]="node.dimension.width / 2"
+      [attr.y]="node.dimension.height / 2"
+      text-anchor="middle"
+      dominant-baseline="middle"
+      fill="#fff"
+      font-size="18"
+      [attr.fill]="node.data.textColor"
+      font-weight="bolder"
+    >
+      {{ node.label }}
+    </svg:text>
+  </svg:g>
+</ng-template>
+
+    </ngx-graph>
+    </div>
+    <div class="right">hyyy</div>
+  </div>
+</body>
+
+</html><router-outlet></router-outlet>
